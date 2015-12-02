@@ -6,10 +6,15 @@ $query_type = $_POST['query_type'];
 $limit1 = $_POST['limit1'];
 $limit2 = $_POST['limit2'];
 
+if ($limit1 >= $limit2 || $limit1 < 0){
+	$limit1 = 0;
+	$limit2 = 50;
+}
+
 if ($query_type == 1){
 	$ename = '%'.$_POST['ename'].'%';
 
-	$res = mysqli_query($conn, "SELECT * FROM Entity WHERE name LIKE '$ename' LIMIT $limit1, $limit2");
+	$res = mysqli_query($conn, "SELECT Entity_ID id, name FROM Entity WHERE name LIKE '$ename' LIMIT $limit1, $limit2");
 	$list = array();
 	while ($row = mysqli_fetch_array($res)){
 		$list[] = $row;
@@ -19,7 +24,7 @@ if ($query_type == 1){
 } elseif ($query_type == 2){
 	$eid = $_POST['eid'];
 
-	$res = mysqli_query($conn, "SELECT * FROM EntityType WHERE Entity_ID = '$eid' LIMIT $limit1, $limit2");
+	$res = mysqli_query($conn, "SELECT Type_URI id FROM EntityType WHERE Entity_ID = '$eid' LIMIT $limit1, $limit2");
 	$list = array();
 	while ($row = mysqli_fetch_array($res)){
 		$list[] = $row;
