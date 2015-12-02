@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Freebase Database</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+    .div1{
+        position: relative;
+        /*height: 100px;*/
+        width: 500px;
+        border: 1px solid black;
+    }
+    .subdiv{
+        position: relative;
+        width: 100%;
+    }
+</style>
+<script type="text/javascript" src="js/jquery/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+</head>
+<body>
+<h1>Freebase Database</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<div class="div1">
+<form action="#" method="get">
+Entity name: <input type="text" name="ename" />
+<input type="button" name="query" value="query" onclick="query1()" />
+</form>
+</div>
+<button id="button">query</button>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>

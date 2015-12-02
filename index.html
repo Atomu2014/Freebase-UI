@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Freebase Database</title>
+<style>
+    body {
+        width: 60em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+    .result{
+        position: relative;
+        width: 1000px;
+        border: 1px solid black;
+    }
+    .subdiv{
+        position: relative;
+        width: 100%;
+    }
+</style>
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="test.js"></script>
+</head>
+<body>
+<h1>Freebase Database</h1>
+<!-- <p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p> -->
+
+<div>
+Limit1: <input type="number" id="limit1" value="0"/>
+Limit2: <input type="number" id="limit2" value="1000"/>
+</div>
+
+<div>
+Entity name: <input type="text" id="query1_input"/>
+<button id="query1">query</button>
+</div>
+
+<div>
+Entity ID: <input type="text" id="query2_input"/>
+<button id="query2">query</button>
+</div>
+
+<div>
+Entity ID: <input type="text" id="query3_input"/>
+<button id="query3">query</button>
+</div>
+
+<div>
+Entity ID: <input type="text" id="query4_input"/>
+<button id="query4">query</button>
+</div>
+
+<div>
+Type ID: <input type="text" id="query5_input"/>
+<button id="query5">query</button>
+</div>
+
+<div>
+Type ID: <input type="text" id="query6_input"/>
+<button id="query6">query</button>
+</div>
+
+<div>
+Property ID: <input type="text" id="query7_input"/>
+<button id="query7">query</button>
+</div>
+
+<p><em id="num_result">? results</em></p>
+
+<div class="result" id="result"></div>
+
+</body>
+</html>
