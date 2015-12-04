@@ -40,10 +40,10 @@ if ($query_type == 1){
 
 	$res = mysqli_query($conn, "SELECT map.URI id FROM EntityType et, Property p JOIN idMap map ON (p.Property_ID = map.ID) WHERE et.Entity_ID = $eid AND (et.Type_ID = p.domain OR et.Type_ID = p.range) LIMIT $limit1, $limit2");
 	$list = array();
-	while ($row = mysqli_fetch_array($res)){
+	while ($row = mysqli_fetch_array($res)) {
 		$list[] = $row;
 	}
-
+	
 	echo json_encode($list);
 } elseif ($query_type == 4){
 	$eid = $_POST['eid'];
@@ -105,7 +105,7 @@ if ($query_type == 1){
 	$res = mysqli_query($conn, "SELECT Property_ID id FROM Property WHERE Property_URI = '$pid'");
 	$pid = mysqli_fetch_array($res)['id'];
 
-	$res = mysqli_query($conn, "SELECT map1.URI s, map2.URI o FROM FFF_Statement s JOIN idMap map1 ON (s.sID = map1.ID) JOIN idMap map2 ON (s.oID = map2.ID) WHERE s.pID = LIMIT $limit1, $limit2");
+	$res = mysqli_query($conn, "SELECT map1.URI s, map2.URI o FROM FFF_Statement s JOIN idMap map1 ON (s.sID = map1.ID) JOIN idMap map2 ON (s.oID = map2.ID) WHERE s.pID = $pid LIMIT $limit1, $limit2");
 	while ($row = mysqli_fetch_array($res)){
 		$list[] = $row;
 	}
